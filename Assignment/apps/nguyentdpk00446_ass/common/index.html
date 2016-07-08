@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nguyentdpk00446_ass</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+
+<script type="text/javascript">
+	function validationcheck() {
+		$.mobile.changePage("#page2", {
+			reverse : false,
+			transition : "slide"
+		});
+		/*if (document.Login.user.value == "") {
+		    alert("Please Enter Username.");
+		    document.Login.user.focus();
+		} else if (document.Login.pass.value == "") {
+		    alert("Please Enter Password.");
+		    document.Login.pass.focus();
+		} else {
+		    success();
+		
+		    $.mobile.changePage("#page2", {
+		        reverse: false,
+		        transition: "slide"
+		    });
+		}*/
+	}
+
+	function danhsach() {
+		$.mobile.changePage("#page3", {
+			reverse : false,
+			transition : "slide"
+		});
+	}
+
+	function chitietsv() {
+		$.mobile.changePage("#page4", {
+			reverse : false,
+			transition : "slide"
+		});
+	}
+
+	function themsinhvien() {
+		$.mobile.changePage("#page5", {
+			reverse : false,
+			transition : "slide"
+		});
+	}
+
+	function success() {
+
+	}
+</script>
+<script src="js/initOptions.js"></script>
+<script src="js/main.js"></script>
+<script src="js/messages.js"></script>
+</head>
+<body style="display: none;">
+
+	<!--application UI goes here-->
+	<div data-role="page" id="page1">
+		<div id="dangnhap" data-role="header">
+			<h1>Login</h1>
+		</div>
+		<div id="dangnhap1" data-role="ui-content">
+			<form>
+				<div id="user">
+					<input type="text" name="" id="idusername" placeholder="Tài khoản" />
+				</div>
+				<div id="pass">
+					<input type="password" name="" id="idpassword" value="" size="30"
+						placeholder="Mật khẩu" />
+				</div>
+				<button type="button" onclick="KiemTraDangNhap()">Đăng nhập</button>
+			</form>
+		</div>
+	</div>
+
+	<div data-role="page" id="page2">
+		<div id="chitiet" data-role="header">
+			<a href="#page1" class="ui-btn" data-rel="back">Login page</a>
+			<h1>Chi tiết</h1>
+		</div>
+		<div id="chitiet1" data-role="ui-content">
+			<button type="button" onclick="danhsach()">Danh sách sinh viên</button>
+			<button type="button" onclick="themsinhvien()">Thêm sinh viên</button>
+		</div>
+	</div>
+
+	<div data-role="page" id="page3">
+		<div id="danhsach" data-role="header">
+			<a href="#page2" class="ui-btn" data-rel="back">Back</a>
+			<h1>Danh sách sinh viên</h1>
+		</div>
+		<div id="danhsach1" data-role="ui-content">
+			<form class="ui-filterable">
+  				<input id="myFilter" data-type="search">
+			</form>
+			<table data-role="table" data-mode="columntoggle"
+				class="ui-responsive ui-shadow" id="myTable" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+				<thead>
+					<tr>
+						<th data-priority="6">STT</th>
+						<th>Tên sinh viên</th>
+						<th data-priority="1">MSSV</th>
+						<th data-priority="2">Giới tính</th>
+						<th data-priority="3">Ngày sinh</th>
+						<th data-priority="4">Ngành học</th>
+						<th data-priority="5">Xóa</th>
+					</tr>
+				</thead>
+				<tbody id="dssv">
+					<tr>
+						<th></th>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+
+
+
+	<div data-role="page" id="page5">
+		<div id="add" data-role="header">
+			<a href="#page2" class="ui-btn" data-rel="back">Back</a>
+			<h1>Thêm sinh viên</h1>
+		</div>
+        <div id="themsv" data-role="ui-content">
+            <form action="" name="myForm">
+                <div data-role="content">
+                    <div class="username" data-role="fieldcontain">
+                        <label for="username"> Tên </label>
+                        <input name="username" id="username" placeholder="Nhập tên" value="" data-mini="true" type="text">
+                    </div>
+                    <div class="psw" data-role="fieldcontain">
+                        <label for="psw"> Mật khẩu </label>
+                        <input name="password" id="psw" placeholder="Nhập mật khẩu" value="" type="password">
+                    </div>
+                    <div class="maso" data-role="fieldcontain">
+                        <label for="maso"> MSSV </label>
+                        <input name="maso" id="maso" placeholder="Nhập mã số" value="" type="text">
+                    </div>
+                    <div class="birth" data-role="fieldcontain">
+                        <label for="birth"> Ngày sinh </label> <input name="birth" id="birth" placeholder="Nhập ngày sinh" value="" type="date">
+                    </div>
+                    <div>
+                        <div class="gender" data-role="fieldcontain">
+                            <label for="gender"> Giới tính </label>
+                            <input name="gender" id="gender" placeholder="Nhập giới tính" value="" type="text">
+                        </div>
+                    </div>
+                    <div class="nganh" data-role="fieldcontain">
+                        <label for="nganh"> Ngành </label>
+                        <input name="nganh" id="nganh" placeholder="Nhập ngành" value="" type="text">
+                    </div>
+                    <input id="register" value="Thêm sinh viên" type="button" name="Register" onclick="insertSv()">
+                </div>
+            </form>
+        </div>
+    </div>		
+</body>
+</html>

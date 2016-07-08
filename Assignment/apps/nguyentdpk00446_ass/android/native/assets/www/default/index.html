@@ -1,0 +1,219 @@
+<!DOCTYPE HTML><html>
+    <head>
+        <meta charset="UTF-8">
+        <title>nguyentdpk00446_ass</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		 WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "nguyentdpk00446_ass",
+   "APP_ID": "nguyentdpk00446_ass",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "1385896328",
+   "WORKLIGHT_PLATFORM_VERSION": "7.1.0.0",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/nguyentdpk00446_ass\/android\/"
+};
+</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+	function validationcheck() {
+		$.mobile.changePage("#page2", {
+			reverse : false,
+			transition : "slide"
+		});
+		/*if (document.Login.user.value == "") {
+		    alert("Please Enter Username.");
+		    document.Login.user.focus();
+		} else if (document.Login.pass.value == "") {
+		    alert("Please Enter Password.");
+		    document.Login.pass.focus();
+		} else {
+		    success();
+		    $.mobile.changePage("#page2", {
+		        reverse: false,
+		        transition: "slide"
+		    });
+		}*/
+	}
+	function danhsach() {
+		$.mobile.changePage("#page3", {
+			reverse : false,
+			transition : "slide"
+		});
+	}
+	function chitietsv() {
+		$.mobile.changePage("#page4", {
+			reverse : false,
+			transition : "slide"
+		});
+	}
+	function themsinhvien() {
+		$.mobile.changePage("#page5", {
+			reverse : false,
+			transition : "slide"
+		});
+	}
+	function success() {
+	}
+</script>
+<script src="js/initOptions.js"></script>
+<script src="js/main.js"></script>
+<script src="js/messages.js"></script>
+    </head>
+    <body style="display: none;">
+	<!--application UI goes here-->
+        <div data-role="page" id="page1">
+            <div data-role="header" id="dangnhap">
+                <h1>Login</h1>
+            </div>
+            <div data-role="ui-content" id="dangnhap1">
+                <form>
+                    <div id="user">
+                        <input id="idusername" name="" placeholder="T&agrave;i khoản" type="text">
+                    </div>
+                    <div id="pass">
+                        <input id="idpassword" name="" placeholder="Mật khẩu" size="30" type="password" value="">
+                    </div>
+                    <button onclick="KiemTraDangNhap()" type="button">Đăng nhập</button>
+                </form>
+            </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-role="header" id="chitiet">
+                <a class="ui-btn" data-rel="back" href="#page1">Login page</a>
+                <h1>Chi tiết</h1>
+            </div>
+            <div data-role="ui-content" id="chitiet1">
+                <button onclick="danhsach()" type="button">Danh s&aacute;ch sinh vi&ecirc;n</button>
+			<button onclick="themsinhvien()" type="button">Th&ecirc;m sinh vi&ecirc;n</button>
+            </div>
+        </div>
+        <div data-role="page" id="page3">
+            <div data-role="header" id="danhsach">
+                <a class="ui-btn" data-rel="back" href="#page2">Back</a>
+                <h1>Danh s&aacute;ch sinh vi&ecirc;n</h1>
+            </div>
+            <div data-role="ui-content" id="danhsach1">
+                <form class="ui-filterable">
+                    <input data-type="search" id="myFilter">
+                </form>
+                <table class="ui-responsive ui-shadow" data-mode="columntoggle" data-role="table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th data-priority="6">STT</th>
+						<th>T&ecirc;n sinh vi&ecirc;n</th>
+						<th data-priority="1">MSSV</th>
+						<th data-priority="2">Giới t&iacute;nh</th>
+						<th data-priority="3">Ng&agrave;y sinh</th>
+						<th data-priority="4">Ng&agrave;nh học</th>
+						<th data-priority="5">X&oacute;a</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dssv">
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div data-role="page" id="page4">
+            <div data-role="header" id="info">
+                <a class="ui-btn" data-rel="back" href="#page1">Back</a>
+                <h1>Chi tiết sinh vi&ecirc;n</h1>
+            </div>
+            <div data-role="ui-content" id="info1">
+                <div data-role="page" id="listsv">
+                    <div class="ui-content" data-role="main">
+                        <h2>Chi tiết</h2>
+                    </div>
+                    <div data-role="ui-content" id="danhsach1">
+                        <table class="ui-responsive ui-shadow" data-mode="columntoggle" data-role="table" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th data-priority="6">STT</th>
+								<th>T&ecirc;n sinh vi&ecirc;n</th>
+								<th data-priority="1">MSSV</th>
+								<th data-priority="2">Giới t&iacute;nh</th>
+								<th data-priority="3">Ng&agrave;y sinh</th>
+								<th data-priority="4">Ng&agrave;nh học</th>
+								<th data-priority="5">X&oacute;a</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dssv">
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>				
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page5">
+            <div data-role="header" id="add">
+                <a class="ui-btn" data-rel="back" href="#page2">Back</a>
+                <h1>Th&ecirc;m sinh vi&ecirc;n</h1>
+            </div>
+            <div data-role="ui-content" id="themsv">
+                <form action="" name="myForm">
+                    <div data-role="content">
+                        <div class="username" data-role="fieldcontain">
+                            <label for="username"> T&ecirc;n </label>
+                        <input data-mini="true" id="username" name="username" placeholder="Nhập t&ecirc;n" type="text" value="">
+                        </div>
+                        <div class="psw" data-role="fieldcontain">
+                            <label for="psw"> Mật khẩu </label>
+                        <input id="psw" name="password" placeholder="Nhập mật khẩu" type="password" value="">
+                        </div>
+                        <div class="maso" data-role="fieldcontain">
+                            <label for="maso"> MSSV </label>
+                        <input id="maso" name="maso" placeholder="Nhập m&atilde; số" type="text" value="">
+                        </div>
+                        <div class="birth" data-role="fieldcontain">
+                            <label for="birth"> Ng&agrave;y sinh </label> <input id="birth" name="birth" placeholder="Nhập ng&agrave;y sinh" type="date" value="">
+                        </div>
+                        <div>
+                            <div class="gender" data-role="fieldcontain">
+                                <label for="gender"> Giới t&iacute;nh </label>
+                            <input id="gender" name="gender" placeholder="Nhập giới t&iacute;nh" type="text" value="">
+                            </div>
+                        </div>
+                        <div class="nganh" data-role="fieldcontain">
+                            <label for="nganh"> Ng&agrave;nh </label>
+                        <input id="nganh" name="nganh" placeholder="Nhập ng&agrave;nh" type="text" value="">
+                        </div>
+                        <div class="access" data-role="fieldcontain">
+                            <label for="access"> Access </label>
+                        <input id="access" name="access" placeholder="Nhập access" type="text" value="">
+                        </div>
+                        <input id="register" name="Register" onclick="insertSv()" type="button" value="Th&ecirc;m sinh vi&ecirc;n">
+                    </div>
+                </form>
+            </div>
+        </div>		
+    </body>
+</html>
